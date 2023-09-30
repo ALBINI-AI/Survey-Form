@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="surveyForm.css">
+</head>
+<body>
+<!---->
+<!--<?php-->
+<!--//$ageError="";-->
+<!--//if($_SERVER['REQUEST_METHOD']=='POST' ){-->
+<!--//    if(empty($_POST['age'])){-->
+<!--//        $ageError="*Required";-->
+<!--//    }-->
+<!--//    else{-->
+<!--//        $ageError="";-->
+<!--//    }-->
+<!--//}-->
+<!--//$nameError="";-->
+<!--//if($_SERVER['REQUEST_METHOD']=='POST' ){-->
+<!--//    if(empty($_POST['name'])){-->
+<!--//        $nameError="*Required";-->
+<!--//    }-->
+<!--//    else{-->
+<!--//        $nameError="";-->
+<!--//    }-->
+<!--//}-->
+<!--//if(isset($_POST['send']) && $ageError==="" && $nameError===""){-->
+<!--//    header("location: http://localhost/PhpstormProjects/PHP-Weekly_Task/Survey-Form/surveyForm.php");-->
+<!--//}-->
+<!--//?>-->
+
+    <div class="form">
+        <form action="http://localhost/PhpstormProjects/PHP-Weekly_Task/Survey-Form/surveyForm.php" method="post">
+            <div>
+                <h2 >Survey Questions</h2>
+            </div>
+            <div>
+                <p>1. Please Enter your Name</p>
+                <div class="options">
+                    <label>  <input type="text" name="name" placeholder="Enter Name"></label>
+                    <p class="error" id="nameError"></p>
+                </div>
+                <hr>
+                <p>2. Please Enter your Age</p>
+                <div class="options">
+                    <label>  <input type="number" name="age" id="age" placeholder="Enter Age"></label>
+                    <p class="error" id="ageError"></p>
+                </div>
+                <hr>
+                <br>
+                <!--Question no.1-->
+                <p>3. How likely are you to recommend using social media to your family and friends</p>
+                <div class="ques">
+                    <div class="options">
+                        <label><input type="radio" name="recommend" value="1" aria-selected="true">1</label>
+                        <label><input type="radio" name="recommend" value="2">2</label>
+                        <label><input type="radio" name="recommend" value="3">3</label>
+                        <label><input type="radio" name="recommend" value="4">4</label>
+                        <label><input type="radio" name="recommend" value="5">5</label>
+                    </div>
+                </div>
+                <hr>
+                <br>
+
+                <!--Question no.2-->
+                <p>4.Please rate the following social media websites on a scale from 0-10</p>
+                <div class="ques">
+                    <div class="options">
+                        <label>Facebook<input type="range" min="0" max="10" step="1" value="0" name="fb" id="fb"><output for="fb" id="fbScale">0</output></label>
+                        <label>Instagram<input type="range" min="0" max="10" step="1" value="0" name="ig" id="ig"><output for="ig" id="igScale">0</output></label>
+                        <label>YouTube<input type="range" min="0" max="10" step="1" value="0" name="yt" id="yt"><output for="yt" id="ytScale">0</output></label>
+                        <label>WatsApp<input type="range" min="0" max="10" step="1" value="0" name="wp" id="wp"><output for="wp" id="wpScale">0</output></label>
+                    </div>
+                </div>
+                <hr>
+                <br>
+
+                <!--Question no.3-->
+                <p>5. Which of the following social media website do you currently have an account with?</p>
+                <div class="ques">
+                    <div class="options">
+                        <label><input type="checkbox" name="check_list[]"  id="fbCheck">Facebook</label>
+                        <label><input type="checkbox" name="check_list[]"  id="igCheck">Instagram</label>
+                        <label><input type="checkbox" name="check_list[]"  id="ytCheck">YouTube</label>
+                        <label><input type="checkbox" name="check_list[]"  id="wpCheck">WatsApp</label>
+                    </div>
+                </div>
+                <hr>
+                <br>
+
+                <!--Question no.4-->
+                <p>6. How often do you check-in to your social media accounts in any given week?</p>
+                <div class="ques">
+                    <div class="options">
+                        <label><input type="radio" name="freq" value="Daily" aria-checked="true">Daily</label>
+                        <label><input type="radio" name="freq" value="Every other day">Every other day</label>
+                        <label><input type="radio" name="freq" value="Every two days">Every two days</label>
+                        <label><input type="radio" name="freq" value="Once a week">Once a week</label>
+                        <label><input type="radio" name="freq" value="Every hour">Every hour</label>
+                        <label><input type="radio" name="freq" value="Never" checked>Never</label>
+                    </div>
+                </div>
+                <hr>
+                <br>
+
+                <!--Question no.5-->
+                <p>7. On an average how much time do you spend on social media?</p>
+                <div class="ques">
+                    <div class="options">
+                        <label><input value="0" name="time" type="number" min="0" max="24" step="any"> Hours</label>
+                    </div>
+                </div>
+                <hr><br>
+                <button type="submit" name="send">Send<img alt="->" src="send.png"></button>
+            </div>
+        </form>
+    </div>
+    <script src="surveyForm.js"></script>
+</body>
+</html>
